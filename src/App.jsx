@@ -1,12 +1,11 @@
 import { Canvas } from "@react-three/fiber";
-import Gallery from "./Gallery";
-import Output from "./Gallery";
+import Carousel from "./Carousel";
 
 const App = () => {
   return (
     <>
       <Canvas>
-        <Output />
+       <Carousel />
       </Canvas>
     </>
   );
