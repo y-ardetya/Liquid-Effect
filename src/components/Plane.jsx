@@ -1,7 +1,7 @@
 import { shaderMaterial, useTexture } from "@react-three/drei";
 import { extend, useThree } from "@react-three/fiber";
-import PhotoShader from "./shader/PhotoShader.glsl";
-import PhotoFragment from "./shader/PhotoFragment.glsl";
+import PhotoShader from "../shader/PhotoShader.glsl"
+import PhotoFragment from "../shader/PhotoFragment.glsl";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
@@ -19,14 +19,14 @@ const Plane = ({ width, height, texture, active, ...props }) => {
       gsap.to(ref.current.material.uniforms.uProgress, {
         value: active ? 1 : 0,
         duration: 2.5,
-        ease: "elastic.inOut(1, 0.65)",
+        ease: "elastic.inOut(1, 0.3)",
       });
 
       gsap.to(ref.current.material.uniforms.uResolution.value, {
         x: active ? viewport.width : width,
         y: active ? viewport.height : height,
         duration: 2.5,
-        ease: "elastic.inOut(1, 0.65)",
+        ease: "elastic.inOut(1, 0.3)",
       });
     }
   }, [viewport, active]);

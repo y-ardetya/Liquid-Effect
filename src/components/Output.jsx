@@ -14,7 +14,7 @@ const Gallery = ({
   const ref = useRef();
   const { viewport } = useThree();
   const [isActive, setIsActive] = useState(false);
-  const [isCloseActive, setCloseActive] = useState(false)
+  const [isCloseActive, setCloseActive] = useState(false);
 
   useEffect(() => {
     if (activePlane === index) {
@@ -30,7 +30,7 @@ const Gallery = ({
     gsap.to(ref.current.position, {
       z: isActive ? 0 : -0.01,
       duration: 0.2,
-      ease: "rough",
+      ease: "elastic.inOut(1, 0.65)",
       delay: isActive ? 0 : 2,
     });
   }, [isActive]);
